@@ -1,0 +1,11 @@
+FROM debian:stretch-slim
+
+WORKDIR /app
+
+COPY script.sh .
+
+RUN apt-get update && apt-get install -y vim curl
+
+CMD ["http://example.com"]
+
+ENTRYPOINT ["/bin/bash", "script.sh"]
